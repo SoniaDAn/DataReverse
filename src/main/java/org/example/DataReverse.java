@@ -9,13 +9,10 @@ public class DataReverse {
 
         int[] reversedResult = new int[data.length];
 
-        int indexOfReversedResult = 0;
-        for (int indexOfOriginalArray = data.length - 1; indexOfOriginalArray > -1; indexOfOriginalArray--) {
+        for (int indexOfOriginalArray = data.length - 1, indexOfReversedResult = 0; indexOfOriginalArray > -1;
+             indexOfOriginalArray--, indexOfReversedResult++) {
             reversedResult[indexOfReversedResult] = data[indexOfOriginalArray];
-            indexOfReversedResult += 1;
         }
         return reversedResult;
-
     }
-
 }
