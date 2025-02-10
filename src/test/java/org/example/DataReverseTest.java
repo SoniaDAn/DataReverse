@@ -25,5 +25,4 @@ class DataReverseTest {
         //then
         assertThat(result).containsExactly(5, 4, 3, 2, 1);
     }
-
 }
