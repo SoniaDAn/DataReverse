@@ -15,4 +15,9 @@ public class DataReverse {
         }
         return reversedResult;
     }
+
+    public static int[][] convertsTo2dArray(int[] data) {
+        int[][] twoDArray = new int[data.length / 8][8];
+        return twoDArray;
+    }
 }

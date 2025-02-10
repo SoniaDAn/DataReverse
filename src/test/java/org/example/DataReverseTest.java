@@ -25,4 +25,16 @@ class DataReverseTest {
         //then
         assertThat(result).containsExactly(5, 4, 3, 2, 1);
     }
+
+    @Test
+    void convertsTo2dArray_takesAnArrayAndConvertsTo2d() {
+        //given
+        int[] data = new int[80];
+
+        //when
+        int[][] result = DataReverse.convertsTo2dArray(data);
+
+        //then
+        assertThat(result.length).isEqualTo(10);
+    }
 }
