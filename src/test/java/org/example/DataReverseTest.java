@@ -30,9 +30,10 @@ class DataReverseTest {
     void convertsTo2dArray_takesAnArrayAndConvertsTo2d() {
         //given
         int[] data = new int[80];
+        int byteSize = 8;
 
         //when
-        int[][] result = DataReverse.convertsTo2dArray(data);
+        int[][] result = DataReverse.convertsTo2dArray(data, byteSize);
 
         //then
         assertThat(result.length).isEqualTo(10);
