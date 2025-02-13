@@ -21,12 +21,12 @@ public class DataReverse {
     public static int[][] convertsTo2dArray(int[] data, int byteSize) {
         int[][] twoDArray = new int[data.length / byteSize][byteSize];
 
-        int arr = 0;
+        int dataArrayIndex = 0;
 
         for (int outerIndex = 0; outerIndex < twoDArray.length; outerIndex++) {
             for (int innerIndex = 0; innerIndex < twoDArray[outerIndex].length; innerIndex++) {
-                twoDArray[outerIndex][innerIndex] = data[arr];
-                arr += 1;
+                twoDArray[outerIndex][innerIndex] = data[dataArrayIndex];
+                dataArrayIndex += 1;
             }
         }
         return twoDArray;
@@ -35,12 +35,12 @@ public class DataReverse {
     public static int[] reversesOrderOfSegmentsIn2dArray(int[][] twoDArray, int byteSize) {
         int[] resultArray = new int[twoDArray.length * byteSize];
 
-        int number = 0;
+        int resultArrayIndex = 0;
 
         for (int outerIndex = twoDArray.length - 1; outerIndex >= 0; outerIndex--) {
             for (int innerIndex = 0; innerIndex < twoDArray[outerIndex].length; innerIndex++) {
-                resultArray[number] = twoDArray[outerIndex][innerIndex];
-                number += 1;
+                resultArray[resultArrayIndex] = twoDArray[outerIndex][innerIndex];
+                resultArrayIndex += 1;
             }
         }
         return resultArray;

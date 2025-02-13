@@ -62,7 +62,8 @@ class DataReverseTest {
         int[][] result = DataReverse.convertsTo2dArray(data, byteSize);
 
         //then
-        assertThat(result).isDeepEqualTo(new int[][]{{1, 2, 3, 4, 5, 6, 7, 8}, {9, 10, 11, 12, 13, 14, 15, 16}, {17, 18, 19, 20, 21, 22, 23, 24}});
+        assertThat(result).isDeepEqualTo(new int[][]{{1, 2, 3, 4, 5, 6, 7, 8}, {9, 10, 11, 12, 13, 14, 15, 16},
+                {17, 18, 19, 20, 21, 22, 23, 24}});
     }
 
     @Test
@@ -75,7 +76,8 @@ class DataReverseTest {
         int[][] result = DataReverse.convertsTo2dArray(data, byteSize);
 
         //then
-        assertThat(result).isDeepEqualTo(new int[][]{{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}, {16, 17, 18, 19, 20}, {21, 22, 23, 24, 25}});
+        assertThat(result).isDeepEqualTo(new int[][]{{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15},
+                {16, 17, 18, 19, 20}, {21, 22, 23, 24, 25}});
     }
 
     @Test
@@ -101,6 +103,22 @@ class DataReverseTest {
         int[] result = DataReverse.reversesOrderOfSegmentsIn2dArray(TwoDArray, byteSize);
 
         //then
-        assertThat(result).containsExactly(17, 18, 19, 20, 21, 22, 23, 24, 9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4, 5, 6, 7, 8);
+        assertThat(result).containsExactly(17, 18, 19, 20, 21, 22, 23, 24, 9, 10, 11, 12, 13,
+                14, 15, 16, 1, 2, 3, 4, 5, 6, 7, 8);
+    }
+
+    @Test
+    void reversesOrderOfSegmentsIn2dArray_reversesPositionsOf3ArraysWithSmallerByteSize() {
+        //given
+        int[][] TwoDArray = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}, {16, 17, 18, 19, 20},
+                {21, 22, 23, 24, 25}};
+        int byteSize = 5;
+
+        //when
+        int[] result = DataReverse.reversesOrderOfSegmentsIn2dArray(TwoDArray, byteSize);
+
+        //then
+        assertThat(result).containsExactly(21, 22, 23, 24, 25, 16, 17, 18, 19, 20, 11, 12, 13, 14, 15,
+                6, 7, 8, 9, 10,1, 2, 3, 4, 5);
     }
 }
