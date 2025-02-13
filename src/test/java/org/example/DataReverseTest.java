@@ -10,11 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class DataReverseTest {
 
     @Test
-    void dataReverse() {
-
-    }
-
-    @Test
     void reverseAnArray_reversesAnArray() {
         //given
         int[] data = {1, 2, 3, 4, 5};
@@ -108,7 +103,7 @@ class DataReverseTest {
     }
 
     @Test
-    void reversesOrderOfSegmentsIn2dArray_reversesPositionsOf3ArraysWithSmallerByteSize() {
+    void reversesOrderOfSegmentsIn2dArray_reversesPositionsOfMultipleArraysWithSmallerByteSize() {
         //given
         int[][] TwoDArray = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}, {16, 17, 18, 19, 20},
                 {21, 22, 23, 24, 25}};
@@ -120,5 +115,17 @@ class DataReverseTest {
         //then
         assertThat(result).containsExactly(21, 22, 23, 24, 25, 16, 17, 18, 19, 20, 11, 12, 13, 14, 15,
                 6, 7, 8, 9, 10,1, 2, 3, 4, 5);
+    }
+
+    @Test
+    void dataReverse_returnsReverseSegmentArray() {
+        //given
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+
+        //when
+        int[] result = DataReverse.dataReverse(array);
+
+        //then
+        assertThat(result).containsExactly(9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4, 5, 6, 7, 8);
     }
 }
