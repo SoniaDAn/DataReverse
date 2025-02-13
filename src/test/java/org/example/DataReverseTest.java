@@ -10,18 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class DataReverseTest {
 
     @Test
-    void reverseAnArray_reversesAnArray() {
-        //given
-        int[] data = {1, 2, 3, 4, 5};
-
-        //when
-        int[] result = DataReverse.reverseAnArray(data);
-
-        //then
-        assertThat(result).containsExactly(5, 4, 3, 2, 1);
-    }
-
-    @Test
     void convertsTo2dArray_takesAnArrayAndConvertsTo2d() {
         //given
         int[] data = new int[80];

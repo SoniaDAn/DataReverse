@@ -2,24 +2,9 @@ package org.example;
 
 public class DataReverse {
     public static int[] dataReverse(int[] data) {
-       //we have a method to convert to a 2d array
-        //we have a method to convert a 2d array to the final array output
-        //int[] dataArray = new int[data.length];
-
         int[][] twoDArray = convertsTo2dArray(data, 8);
 
         return reversesOrderOfSegmentsIn2dArray(twoDArray, 8);
-    }
-
-    public static int[] reverseAnArray(int[] data) {
-
-        int[] reversedResult = new int[data.length];
-
-        for (int indexOfOriginalArray = data.length - 1, indexOfReversedResult = 0; indexOfOriginalArray > -1;
-             indexOfOriginalArray--, indexOfReversedResult++) {
-            reversedResult[indexOfReversedResult] = data[indexOfOriginalArray];
-        }
-        return reversedResult;
     }
 
     public static int[][] convertsTo2dArray(int[] data, int byteSize) {
