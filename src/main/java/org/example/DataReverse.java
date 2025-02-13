@@ -25,18 +25,10 @@ public class DataReverse {
         int arr = 0;
 
         for (int outerIndex = 0; outerIndex < twoDArray.length; outerIndex++) {
-
-            //when 2nd outer loop starts it should be on index 8 but inner index has been reset to 0
             for (int innerIndex = 0; innerIndex < twoDArray[outerIndex].length; innerIndex++) {
                 twoDArray[outerIndex][innerIndex] = data[arr];
-                arr += 1;//the data index can't be called innerIndex.
+                arr += 1;
             }
-            //at the end of 1st inner loop should have gone to 7th index of data array
-
-            //data[innerIndex] = data[innerIndex * outerIndex];
-            //data[outerIndex] += 1; this isn't incrementing the index. data[outerIndex += 1] increments the index.
-            //data = data[outerIndex += 1];
-
         }
         return twoDArray;
     }
