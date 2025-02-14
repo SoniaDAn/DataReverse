@@ -4,7 +4,8 @@ public class DataReverse {
     public static int[] dataReverse(int[] data) {
         int[][] twoDArray = convertsTo2dArray(data, 8);
 
-        return reversesOrderOfSegmentsIn2dArray(twoDArray);
+        //return reversesOrderOfSegmentsIn2dArray(twoDArray);
+        return new int[0];
     }
 
     public static int[][] convertsTo2dArray(int[] data, int byteSize) {
@@ -21,22 +22,35 @@ public class DataReverse {
         return twoDArray;
     }
 
-    public static int[] reversesOrderOfSegmentsIn2dArray(int[][] twoDArray) {
+    public static int[][] reversesOrderOfSegmentsIn2dArray(int[][] twoDArray) {
 
         if (twoDArray.length == 0) {
-            return new int[twoDArray.length];
+            return new int[twoDArray.length][];
         }
 
-        int[] data = new int[twoDArray.length * twoDArray[0].length];
-
-        int resultArrayIndex = 0;
-
+        int[][] data = new int[twoDArray.length][twoDArray[0].length];
+        int dataOuterIndex = 0;
         for (int outerIndex = twoDArray.length - 1; outerIndex >= 0; outerIndex--) {
+            int dataInnerIndex = 0;
             for (int innerIndex = 0; innerIndex < twoDArray[outerIndex].length; innerIndex++) {
-                data[resultArrayIndex] = twoDArray[outerIndex][innerIndex];
-                resultArrayIndex += 1;
+                data[dataOuterIndex][dataInnerIndex] = twoDArray[outerIndex][innerIndex];
+                dataInnerIndex +=1;
+
             }
+            dataOuterIndex += 1;
+
         }
         return data;
+    }
+
+    public static int[] convertsToArray(int[][] data) {
+
+        int[] reversedResult = new int[data.length];
+
+        for (int indexOfOriginalArray = data.length - 1, indexOfReversedResult = 0; indexOfOriginalArray > -1;
+             indexOfOriginalArray--, indexOfReversedResult++) {
+            reversedResult[indexOfReversedResult] = data[indexOfOriginalArray];
+        }
+        return reversedResult;
     }
 }

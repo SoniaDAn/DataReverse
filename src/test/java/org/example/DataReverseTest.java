@@ -69,10 +69,10 @@ class DataReverseTest {
         int[][] twoDArray = {{1, 2, 3, 4, 5, 6, 7, 8}, {9, 10, 11, 12, 13, 14, 15, 16}};
 
         //when
-        int[] result = DataReverse.reversesOrderOfSegmentsIn2dArray(twoDArray);
+        int[][] result = DataReverse.reversesOrderOfSegmentsIn2dArray(twoDArray);
 
         //then
-        assertThat(result).containsExactly(9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4, 5, 6, 7, 8);
+        assertThat(result).isDeepEqualTo(new int[][]{{9, 10, 11, 12, 13, 14, 15, 16}, {1, 2, 3, 4, 5, 6, 7, 8}});
     }
 
     @Test
@@ -81,11 +81,11 @@ class DataReverseTest {
         int[][] twoDArray = {{1, 2, 3, 4, 5, 6, 7, 8}, {9, 10, 11, 12, 13, 14, 15, 16}, {17, 18, 19, 20, 21, 22, 23, 24}};
 
         //when
-        int[] result = DataReverse.reversesOrderOfSegmentsIn2dArray(twoDArray);
+        int[][] result = DataReverse.reversesOrderOfSegmentsIn2dArray(twoDArray);
 
         //then
-        assertThat(result).containsExactly(17, 18, 19, 20, 21, 22, 23, 24, 9, 10, 11, 12, 13,
-                14, 15, 16, 1, 2, 3, 4, 5, 6, 7, 8);
+        assertThat(result).isDeepEqualTo(new int[][]{{17, 18, 19, 20, 21, 22, 23, 24}, {9, 10, 11, 12, 13,
+                14, 15, 16}, {1, 2, 3, 4, 5, 6, 7, 8}});
     }
 
     @Test
@@ -95,11 +95,11 @@ class DataReverseTest {
                 {21, 22, 23, 24, 25}};
 
         //when
-        int[] result = DataReverse.reversesOrderOfSegmentsIn2dArray(twoDArray);
+        int[][] result = DataReverse.reversesOrderOfSegmentsIn2dArray(twoDArray);
 
         //then
-        assertThat(result).containsExactly(21, 22, 23, 24, 25, 16, 17, 18, 19, 20, 11, 12, 13, 14, 15,
-                6, 7, 8, 9, 10,1, 2, 3, 4, 5);
+        assertThat(result).isDeepEqualTo(new int[][]{{21, 22, 23, 24, 25}, {16, 17, 18, 19, 20}, {11, 12, 13, 14, 15},
+                {6, 7, 8, 9, 10}, {1, 2, 3, 4, 5}});
     }
 
     @Test
@@ -108,7 +108,7 @@ class DataReverseTest {
         int[][] twoDArray = {};
 
         //when
-        int[] result = DataReverse.reversesOrderOfSegmentsIn2dArray(twoDArray);
+        int[][] result = DataReverse.reversesOrderOfSegmentsIn2dArray(twoDArray);
 
         //then
         assertThat(result).isEmpty();
@@ -124,5 +124,17 @@ class DataReverseTest {
 
         //then
         assertThat(result).containsExactly(9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4, 5, 6, 7, 8);
+    }
+
+    @Test
+    void convertsToArray_takesA2dArrayAndConvertsToArray() {
+        //given
+        int[][] data = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}};
+
+        //when
+        int[] result = DataReverse.convertsToArray(data);
+
+        //then
+        assertThat(result).containsExactly(10, 9, 8, 7, 6, 5, 4, 3, 2, 1);
     }
 }
