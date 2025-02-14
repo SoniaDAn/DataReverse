@@ -125,4 +125,28 @@ class DataReverseTest {
         //then
         assertThat(result).containsExactly(9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4, 5, 6, 7, 8);
     }
+
+    @Test
+    void deconstructTwoDimensionalArray_returnsDeconstructedArray() {
+        //given
+        int[][] input = {{1, 2, 3, 4}, {5, 6, 7, 8}};
+
+        //when
+        final int[] result = DataReverse.deconstructTwoDimensionalArray(input);
+
+        //then
+        assertThat(result).containsExactly(1, 2, 3, 4, 5, 6, 7, 8);
+    }
+
+    @Test
+    void reverse_reversesTheTwoDimensionalArray() {
+        //given
+        int[][] input = {{1, 2, 3, 4}, {5, 6, 7, 8}};
+
+        //when
+        int[][] result = DataReverse.reverse(input);
+
+        //then
+        assertThat(result).isDeepEqualTo(new int[][]{{5, 6, 7, 8}, {1, 2, 3, 4}});
+    }
 }
