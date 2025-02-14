@@ -4,7 +4,7 @@ public class DataReverse {
     public static int[] dataReverse(int[] data) {
         int[][] twoDArray = convertsTo2dArray(data, 8);
 
-        return reversesOrderOfSegmentsIn2dArray(twoDArray, 8);
+        return reversesOrderOfSegmentsIn2dArray(twoDArray);
     }
 
     public static int[][] convertsTo2dArray(int[] data, int byteSize) {
@@ -21,8 +21,13 @@ public class DataReverse {
         return twoDArray;
     }
 
-    public static int[] reversesOrderOfSegmentsIn2dArray(int[][] twoDArray, int byteSize) {
-        int[] data = new int[twoDArray.length * byteSize];
+    public static int[] reversesOrderOfSegmentsIn2dArray(int[][] twoDArray) {
+
+        if (twoDArray.length == 0) {
+            return new int[twoDArray.length];
+        }
+
+        int[] data = new int[twoDArray.length * twoDArray[0].length];
 
         int resultArrayIndex = 0;
 
