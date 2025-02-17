@@ -43,14 +43,18 @@ public class DataReverse {
         return data;
     }
 
-    public static int[] convertsToArray(int[][] data) {
+    public static int[] convertsToArray(int[][] twoDArray) {
+        int[] data = new int[twoDArray.length * twoDArray[0].length];
 
-        int[] reversedResult = new int[data.length];
+        int dataIndex = 0;
 
-        for (int indexOfOriginalArray = data.length - 1, indexOfReversedResult = 0; indexOfOriginalArray > -1;
-             indexOfOriginalArray--, indexOfReversedResult++) {
-            reversedResult[indexOfReversedResult] = data[indexOfOriginalArray];
+        for (int outerIndex = 0; outerIndex < twoDArray.length; outerIndex++) {
+            for (int innerIndex = 0; innerIndex < twoDArray[outerIndex].length; innerIndex++) {
+                data[dataIndex] = twoDArray[outerIndex][innerIndex];
+                dataIndex += 1;
+            }
+
         }
-        return reversedResult;
+        return data;
     }
 }

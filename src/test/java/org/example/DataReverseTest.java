@@ -129,12 +129,12 @@ class DataReverseTest {
     @Test
     void convertsToArray_takesA2dArrayAndConvertsToArray() {
         //given
-        int[][] data = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}};
+        int[][] data = {{6, 7, 8, 9, 10}, {1, 2, 3, 4, 5}};
 
         //when
         int[] result = DataReverse.convertsToArray(data);
 
         //then
-        assertThat(result).containsExactly(10, 9, 8, 7, 6, 5, 4, 3, 2, 1);
+        assertThat(result).containsExactly( 6, 7, 8, 9, 10, 1, 2, 3, 4, 5);
     }
 }
