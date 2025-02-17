@@ -3,9 +3,8 @@ package org.example;
 public class DataReverse {
     public static int[] dataReverse(int[] data) {
         int[][] twoDArray = convertsTo2dArray(data, 8);
-
-        //return reversesOrderOfSegmentsIn2dArray(twoDArray);
-        return new int[0];
+        twoDArray = reversesOrderOfSegmentsIn2dArray(twoDArray);
+        return convertsToArray(twoDArray);
     }
 
     public static int[][] convertsTo2dArray(int[] data, int byteSize) {

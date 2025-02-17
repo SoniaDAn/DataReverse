@@ -115,18 +115,6 @@ class DataReverseTest {
     }
 
     @Test
-    void dataReverse_returnsReverseSegmentArray() {
-        //given
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
-
-        //when
-        int[] result = DataReverse.dataReverse(array);
-
-        //then
-        assertThat(result).containsExactly(9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4, 5, 6, 7, 8);
-    }
-
-    @Test
     void convertsToArray_takesA2dArrayAndConvertsToArray() {
         //given
         int[][] data = {{6, 7, 8, 9, 10}, {1, 2, 3, 4, 5}};
@@ -136,5 +124,17 @@ class DataReverseTest {
 
         //then
         assertThat(result).containsExactly( 6, 7, 8, 9, 10, 1, 2, 3, 4, 5);
+    }
+
+    @Test
+    void dataReverse_returnsReverseSegmentArray() {
+        //given
+        int[] data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+
+        //when
+        int[] result = DataReverse.dataReverse(data);
+
+        //then
+        assertThat(result).containsExactly(9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4, 5, 6, 7, 8);
     }
 }
