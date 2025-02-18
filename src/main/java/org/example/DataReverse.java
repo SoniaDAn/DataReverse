@@ -47,9 +47,9 @@ public class DataReverse {
 
         int dataIndex = 0;
 
-        for (int outerIndex = 0; outerIndex < twoDArray.length; outerIndex++) {
-            for (int innerIndex = 0; innerIndex < twoDArray[outerIndex].length; innerIndex++) {
-                data[dataIndex] = twoDArray[outerIndex][innerIndex];
+        for (int[] innerArray : twoDArray) {
+            for (int innerIndex : innerArray) {
+                data[dataIndex] = innerIndex;
                 dataIndex += 1;
             }
 
