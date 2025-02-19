@@ -33,7 +33,7 @@ public class DataReverse {
             int dataInnerIndex = 0;
             for (int innerIndex = 0; innerIndex < twoDArray[outerIndex].length; innerIndex++) {
                 data[dataOuterIndex][dataInnerIndex] = twoDArray[outerIndex][innerIndex];
-                dataInnerIndex +=1;
+                dataInnerIndex += 1;
 
             }
             dataOuterIndex += 1;
@@ -43,8 +43,12 @@ public class DataReverse {
     }
 
     public static int[] convertsToArray(int[][] twoDArray) {
-        int[] data = new int[twoDArray.length * twoDArray[0].length];
 
+        if (twoDArray.length == 0) {
+            return new int[0];
+        }
+
+        int[] data = new int[twoDArray.length * twoDArray[0].length];
         int dataIndex = 0;
 
         for (int[] innerArray : twoDArray) {
@@ -52,7 +56,6 @@ public class DataReverse {
                 data[dataIndex] = innerIndex;
                 dataIndex += 1;
             }
-
         }
         return data;
     }
